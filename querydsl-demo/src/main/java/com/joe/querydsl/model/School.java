@@ -17,5 +17,5 @@ import javax.persistence.*;
 public class School extends AbstractModel{
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "region_id")
-    private Region regionaa;
+    private Region region;
 }
