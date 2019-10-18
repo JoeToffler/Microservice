@@ -1,5 +1,6 @@
 package com.joe.querydsl.model;
 
+import com.querydsl.core.annotations.QueryInit;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +18,6 @@ import javax.persistence.*;
 public class TeachingGroup extends AbstractModel {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "school_id")
+    @QueryInit("*.*.*.*")
     private School school;
 }

@@ -1,0 +1,21 @@
+#测试POST的写法使用
+POST http://localhost:5000/api/pub/auth/login
+Content-Type: application/json
+
+{"usernameOrEmail":"admin", "password":"123456"}
+
+###
+
+# 根据学生的姓名模糊查询
+GET http://localhost:7777/w/students/search?page=0&size=20&name=李
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+# 根据
+GET http://localhost:7777/w/students/search?page=0&size=20&grade.teacher.teachingGroup.school.id=1
+Accept: */*
+Cache-Control: no-cache
+
+###

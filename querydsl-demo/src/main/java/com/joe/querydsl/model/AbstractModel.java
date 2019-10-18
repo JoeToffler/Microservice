@@ -19,7 +19,6 @@ public abstract class AbstractModel implements Serializable {
     @Column(length = 20)
     private Long id;
 
-    @Column(name = "name")
     private String name;
 
     public Long getId() {

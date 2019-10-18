@@ -1,8 +1,7 @@
 package com.joe.querydsl.controller;
 
-import com.joe.querydsl.model.Student;
-import com.joe.querydsl.model.Teacher;
-import com.joe.querydsl.repository.TeacherRepository;
+import com.joe.querydsl.model.TeachingGroup;
+import com.joe.querydsl.repository.TeachingGroupRepository;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Predicate;
 import io.swagger.annotations.Api;
@@ -24,20 +23,20 @@ import java.util.List;
  * @date 2019-10-10 14:56
  */
 @RestController
-@RequestMapping("/w/teachers")
-@Api(tags = {"老师API"})
-public class TeacherController {
+@RequestMapping("/w/teachingGroup")
+@Api(tags = {"教师组API"})
+public class TeachingGroupController {
 
     @Autowired
-    TeacherRepository teacherRepository;
+    TeachingGroupRepository teachingGroupRepository;
 
     @ApiOperation(value = "获取分页数据")
     @GetMapping("/search")
-    public ResultModel search(@QuerydslPredicate(root = Student.class) Predicate predicate, final Pageable pageable) {
+    public ResultModel search(@QuerydslPredicate(root = TeachingGroup.class) Predicate predicate, final Pageable pageable) {
         if (predicate == null) predicate = new BooleanBuilder();
-        Page<Teacher> all = teacherRepository.findAll(predicate, pageable);
+        Page<TeachingGroup> all = teachingGroupRepository.findAll(predicate, pageable);
         Pageable page = all.getPageable();
-        List<Teacher> content = all.getContent();
+        List<TeachingGroup> content = all.getContent();
         ResultModel resultModel = new ResultModel(content,page);
         return resultModel;
     }
