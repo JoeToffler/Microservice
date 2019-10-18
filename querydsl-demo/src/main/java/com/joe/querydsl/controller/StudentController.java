@@ -30,7 +30,7 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
-    @ApiOperation(value = "获取分页数据")
+    @ApiOperation(value = "复合条件查询并分页")
     @GetMapping("/search")
     public ResultModel search(@QuerydslPredicate(root = Student.class) Predicate predicate, final Pageable pageable) {
         if (predicate == null) predicate = new BooleanBuilder();

@@ -1,4 +1,4 @@
-#测试POST的写法使用
+#测试POST的写法使用(与本次项目无关，请使用下面GET请求)
 POST http://localhost:5000/api/pub/auth/login
 Content-Type: application/json
 

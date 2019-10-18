@@ -18,7 +18,7 @@ import javax.persistence.*;
 @Table(name = "student")
 public class Student extends AbstractModel{
 
-    @QueryInit("*.*.*.*.*.*.*")
+    @QueryInit("*.*.*.*.*")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "grade_id")
     private Grade grade;
