@@ -24,6 +24,12 @@ public interface StudentRepository extends Repository<Student, Long>
      */
     @Override
     default void customize(QuerydslBindings bindings, QStudent student) {
+
+        /**
+         * 匹配全条件模糊查询
+         */
+        bindings.bind(String.class).first((StringPath path, String value) -> path.containsIgnoreCase(value));
+
         /**
          * 通过name匹配name或nickname
          */
