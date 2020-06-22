@@ -14,5 +14,3 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect  ## org.hibernate.dialect.MySQL5InnoDBDialect
       format_sql: true
     show_sql: true
-    
-    #18892067322
