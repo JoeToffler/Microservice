@@ -12,6 +12,3 @@ querydsl-demo/src/main/resources/querytest.sql
 
 # 请求示例
 querydsl-demo/src/main/resources/
-
-# 感谢阅读，如有需要，请来波Star，UP猪会持续更新到肝爆。
-# Thanks for reading, if necessary, please Star, UP pig will continue to update to liver explosion.
